@@ -34,6 +34,8 @@
     <modules>
         <module>web-plugin-endpoint</module>
         <module>web-plugin-feature</module>
+        <module>jaxws-plugin-endpoint</module>
+        <module>jaxws-plugin-feature</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -74,6 +76,29 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <!-- jaxws -->
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <!-- Jetty is needed if you're using the CXFServlet -->
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-features-logging</artifactId>
+                <version>${cxf.version}</version>
             </dependency>
 
             <!--TEST-->
